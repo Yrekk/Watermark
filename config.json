@@ -1,0 +1,9 @@
+{
+    "input_folder": "input",
+    "output_folder": "output",
+    "assets_folder": "assets",
+    "temp_folder": "temp",
+    "error_log_path": "logs/errors.log",
+    "margin_x": 40,
+    "margin_y": 40
+}

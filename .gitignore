@@ -1,0 +1,19 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Runtime folders
+input/
+output/
+temp/
+logs/
+
+# Editor
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
