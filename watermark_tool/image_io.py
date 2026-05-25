@@ -21,6 +21,11 @@ def save_image(image: Image.Image, output_path: str) -> None:
     # Create the parent folder if it does not already exist.
     path.parent.mkdir(parents=True, exist_ok=True)
 
+    # JPEG does not support alpha transparency.
+    # If the output file is a JPEG and the image is RGBA, convert it to RGB before saving.
+    if path.suffix.lower() in {".jpg", ".jpeg"} and image.mode == "RGBA":
+        image = image.convert("RGB")
+
     # Save the image to the requested path.
     image.save(path)
 
