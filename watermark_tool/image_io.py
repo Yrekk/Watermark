@@ -14,6 +14,7 @@ def open_image(image_path: str) -> Image.Image:
     # Open the image with Pillow.
     return Image.open(path)
 
+
 def save_image(image: Image.Image, output_path: str) -> None:
     # Convert the string path to a Path object for cleaner file handling.
     path = Path(output_path)
@@ -28,6 +29,7 @@ def save_image(image: Image.Image, output_path: str) -> None:
 
     # Save the image to the requested path.
     image.save(path)
+
 
 def get_first_image_path(folder_path: str) -> Path:
     # Convert the string path to a Path object for cleaner folder handling.
@@ -44,7 +46,8 @@ def get_first_image_path(folder_path: str) -> Path:
 
     # Keep only files with an allowed image extension, then sort them by name.
     image_paths = sorted(
-        path for path in folder.iterdir()
+        path
+        for path in folder.iterdir()
         if path.is_file() and path.suffix.lower() in allowed_extensions
     )
 
@@ -53,6 +56,7 @@ def get_first_image_path(folder_path: str) -> Path:
 
     # Return the first image path in alphabetical order.
     return image_paths[0]
+
 
 def get_image_paths(folder_path: str) -> list[Path]:
     # Convert the string path to a Path object for cleaner folder handling.
@@ -69,11 +73,13 @@ def get_image_paths(folder_path: str) -> list[Path]:
 
     # Keep only files with an allowed image extension, then sort them by name.
     image_paths = sorted(
-        path for path in folder.iterdir()
+        path
+        for path in folder.iterdir()
         if path.is_file() and path.suffix.lower() in allowed_extensions
     )
 
     return image_paths
+
 
 def copy_file_to_folder(source_path: Path, target_folder_path: str) -> Path:
     # Convert the target folder path to a Path object.
@@ -89,7 +95,3 @@ def copy_file_to_folder(source_path: Path, target_folder_path: str) -> Path:
     shutil.copy2(source_path, target_path)
 
     return target_path
-
-def open_folder(folder_path: str) -> None:
-    # Open the folder in the operating system file explorer.
-    os.startfile(folder_path)

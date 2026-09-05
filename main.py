@@ -60,7 +60,9 @@ def main():
                 position=position,
             )
 
-            output_path = f"{output_folder}/{image_path.stem}_watermarked{image_path.suffix}"
+            output_path = (
+                f"{output_folder}/{image_path.stem}_watermarked{image_path.suffix}"
+            )
 
             save_image(result, output_path)
             print(f"Saved: {output_path}")
@@ -86,8 +88,6 @@ def main():
     print(f"Success: {success_count}")
     print(f"Errors: {error_count}")
     print(f"Remaining files in input: {len(get_image_paths(input_folder))}")
-
-    open_folder(output_folder)
 
 
 if __name__ == "__main__":
