@@ -7,7 +7,6 @@ from watermark_tool.image_io import (
     get_first_image_path,
     get_image_paths,
     copy_file_to_folder,
-    open_folder,
 )
 from watermark_tool.positioning import get_bottom_right_position
 from watermark_tool.watermark_service import apply_watermark
